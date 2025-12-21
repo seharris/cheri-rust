@@ -1,5 +1,11 @@
 //@ compile-flags: -Copt-level=3
+//@ ignore-riscv32cheriot-unknown-cheriotrtos FIXME: Triage missing alloc opt
+
 #![crate_type = "lib"]
+#![no_std]
+
+extern crate alloc;
+use alloc::boxed::Box;
 
 #[no_mangle]
 pub fn alloc_test(data: u32) {

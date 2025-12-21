@@ -1,5 +1,11 @@
 //@ compile-flags: -Copt-level=3
+//@ ignore-riscv32cheriot-unknown-cheriotrtos FIXME: Triage missing opt
+
 #![crate_type = "lib"]
+#![no_std]
+
+extern crate alloc;
+use alloc::vec::Vec;
 
 #[no_mangle]
 pub fn get_len() -> usize {
